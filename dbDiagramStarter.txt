@@ -1,0 +1,1162 @@
+
+Table "action_mailbox_inbound_emails" {
+  "id" varchar
+  "status" integer
+  "message_id" string
+  "message_checksum" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "action_text_rich_texts" {
+  "id" varchar
+  "name" string
+  "body" text
+  "record_type" string
+  "record_id" bigint
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "active_storage_attachments" {
+  "id" varchar
+  "name" string
+  "record_type" string
+  "record_id" bigint
+  "blob_id" bigint
+  "created_at" datetime
+}
+
+Table "active_storage_blobs" {
+  "id" varchar
+  "key" string
+  "filename" string
+  "content_type" string
+  "metadata" text
+  "service_name" string
+  "byte_size" bigint
+  "checksum" string
+  "created_at" datetime
+}
+
+Table "active_storage_variant_records" {
+  "id" varchar
+  "blob_id" bigint
+  "variation_digest" string
+}
+
+Table "friendly_id_slugs" {
+  "id" varchar
+  "slug" string
+  "sluggable_id" integer
+  "sluggable_type" string
+  "scope" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "solidus_stripe_customers" {
+  "id" varchar
+  "payment_method_id" integer
+  "source_type" string
+  "source_id" integer
+  "stripe_id" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "solidus_stripe_payment_intents" {
+  "id" varchar
+  "stripe_intent_id" string
+  "order_id" integer
+  "payment_method_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "solidus_stripe_payment_sources" {
+  "id" varchar
+  "payment_method_id" integer
+  "stripe_payment_method_id" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "solidus_stripe_slug_entries" {
+  "id" varchar
+  "payment_method_id" integer
+  "slug" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_addresses" {
+  "id" varchar
+  "firstname" string
+  "lastname" string
+  "address1" string
+  "address2" string
+  "city" string
+  "zipcode" string
+  "phone" string
+  "state_name" string
+  "alternative_phone" string
+  "company" string
+  "state_id" integer
+  "country_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+  "name" string
+}
+
+Table "spree_adjustment_reasons" {
+  "id" varchar
+  "name" string
+  "code" string
+  "active" boolean
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_adjustments" {
+  "id" varchar
+  "source_type" string
+  "source_id" integer
+  "adjustable_type" string
+  "adjustable_id" integer
+  "amount" decimal
+  "label" string
+  "eligible" boolean
+  "created_at" datetime
+  "updated_at" datetime
+  "order_id" integer
+  "included" boolean
+  "promotion_code_id" integer
+  "adjustment_reason_id" integer
+  "finalized" boolean
+}
+
+Table "spree_assets" {
+  "id" varchar
+  "viewable_type" string
+  "viewable_id" integer
+  "attachment_width" integer
+  "attachment_height" integer
+  "attachment_file_size" integer
+  "position" integer
+  "attachment_content_type" string
+  "attachment_file_name" string
+  "type" string
+  "attachment_updated_at" datetime
+  "alt" text
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_calculators" {
+  "id" varchar
+  "type" string
+  "calculable_type" string
+  "calculable_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+  "preferences" text
+}
+
+Table "spree_cartons" {
+  "id" varchar
+  "number" string
+  "external_number" string
+  "stock_location_id" integer
+  "address_id" integer
+  "shipping_method_id" integer
+  "tracking" string
+  "shipped_at" datetime
+  "created_at" datetime
+  "updated_at" datetime
+  "imported_from_shipment_id" integer
+}
+
+Table "spree_countries" {
+  "id" varchar
+  "iso_name" string
+  "iso" string
+  "iso3" string
+  "name" string
+  "numcode" integer
+  "states_required" boolean
+  "updated_at" datetime
+  "created_at" datetime
+}
+
+Table "spree_credit_cards" {
+  "id" varchar
+  "month" string
+  "year" string
+  "cc_type" string
+  "last_digits" string
+  "gateway_customer_profile_id" string
+  "gateway_payment_profile_id" string
+  "created_at" datetime
+  "updated_at" datetime
+  "name" string
+  "user_id" integer
+  "payment_method_id" integer
+  "default" boolean
+  "address_id" integer
+}
+
+Table "spree_customer_returns" {
+  "id" varchar
+  "number" string
+  "stock_location_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_inventory_units" {
+  "id" varchar
+  "state" string
+  "variant_id" integer
+  "shipment_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+  "pending" boolean
+  "line_item_id" integer
+  "carton_id" integer
+}
+
+Table "spree_line_item_actions" {
+  "id" varchar
+  "line_item_id" integer
+  "action_id" integer
+  "quantity" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_line_items" {
+  "id" varchar
+  "variant_id" integer
+  "order_id" integer
+  "quantity" integer
+  "price" decimal
+  "created_at" datetime
+  "updated_at" datetime
+  "cost_price" decimal
+  "tax_category_id" integer
+  "adjustment_total" decimal
+  "additional_tax_total" decimal
+  "promo_total" decimal
+  "included_tax_total" decimal
+}
+
+Table "spree_log_entries" {
+  "id" varchar
+  "source_type" string
+  "source_id" integer
+  "details" text
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_option_type_prototypes" {
+  "id" varchar
+  "prototype_id" integer
+  "option_type_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_option_types" {
+  "id" varchar
+  "name" string
+  "presentation" string
+  "position" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_option_values" {
+  "id" varchar
+  "position" integer
+  "name" string
+  "presentation" string
+  "option_type_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_option_values_variants" {
+  "id" varchar
+  "variant_id" integer
+  "option_value_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_order_mutexes" {
+  "id" varchar
+  "order_id" integer
+  "created_at" datetime
+}
+
+Table "spree_orders" {
+  "id" varchar
+  "number" string
+  "item_total" decimal
+  "total" decimal
+  "state" string
+  "adjustment_total" decimal
+  "user_id" integer
+  "completed_at" datetime
+  "bill_address_id" integer
+  "ship_address_id" integer
+  "payment_total" decimal
+  "shipment_state" string
+  "payment_state" string
+  "email" string
+  "special_instructions" text
+  "created_at" datetime
+  "updated_at" datetime
+  "currency" string
+  "last_ip_address" string
+  "created_by_id" integer
+  "shipment_total" decimal
+  "additional_tax_total" decimal
+  "promo_total" decimal
+  "channel" string
+  "included_tax_total" decimal
+  "item_count" integer
+  "approver_id" integer
+  "approved_at" datetime
+  "confirmation_delivered" boolean
+  "guest_token" string
+  "canceled_at" datetime
+  "canceler_id" integer
+  "store_id" integer
+  "approver_name" string
+  "frontend_viewable" boolean
+}
+
+Table "spree_orders_promotions" {
+  "id" varchar
+  "order_id" integer
+  "promotion_id" integer
+  "promotion_code_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_payment_capture_events" {
+  "id" varchar
+  "amount" decimal
+  "payment_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_payment_methods" {
+  "id" varchar
+  "type" string
+  "name" string
+  "description" text
+  "active" boolean
+  "deleted_at" datetime
+  "created_at" datetime
+  "updated_at" datetime
+  "auto_capture" boolean
+  "preferences" text
+  "preference_source" string
+  "position" integer
+  "available_to_users" boolean
+  "available_to_admin" boolean
+  "type_before_removal" string
+}
+
+Table "spree_payments" {
+  "id" varchar
+  "amount" decimal
+  "order_id" integer
+  "source_type" string
+  "source_id" integer
+  "payment_method_id" integer
+  "state" string
+  "response_code" string
+  "avs_response" string
+  "created_at" datetime
+  "updated_at" datetime
+  "number" string
+  "cvv_response_code" string
+  "cvv_response_message" string
+}
+
+Table "spree_preferences" {
+  "id" varchar
+  "value" text
+  "key" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_prices" {
+  "id" varchar
+  "variant_id" integer
+  "amount" decimal
+  "currency" string
+  "deleted_at" datetime
+  "created_at" datetime
+  "updated_at" datetime
+  "country_iso" string
+}
+
+Table "spree_product_option_types" {
+  "id" varchar
+  "position" integer
+  "product_id" integer
+  "option_type_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_product_promotion_rules" {
+  "id" varchar
+  "product_id" integer
+  "promotion_rule_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_product_properties" {
+  "id" varchar
+  "value" string
+  "product_id" integer
+  "property_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+  "position" integer
+}
+
+Table "spree_products" {
+  "id" varchar
+  "name" string
+  "description" text
+  "available_on" datetime
+  "deleted_at" datetime
+  "slug" string
+  "meta_description" text
+  "meta_keywords" string
+  "tax_category_id" integer
+  "shipping_category_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+  "promotionable" boolean
+  "meta_title" string
+  "discontinue_on" datetime
+}
+
+Table "spree_products_taxons" {
+  "id" varchar
+  "product_id" integer
+  "taxon_id" integer
+  "position" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_promotion_actions" {
+  "id" varchar
+  "promotion_id" integer
+  "position" integer
+  "type" string
+  "deleted_at" datetime
+  "preferences" text
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_promotion_categories" {
+  "id" varchar
+  "name" string
+  "created_at" datetime
+  "updated_at" datetime
+  "code" string
+}
+
+Table "spree_promotion_code_batches" {
+  "id" varchar
+  "promotion_id" integer
+  "base_code" string
+  "number_of_codes" integer
+  "email" string
+  "error" string
+  "state" string
+  "created_at" datetime
+  "updated_at" datetime
+  "join_characters" string
+}
+
+Table "spree_promotion_codes" {
+  "id" varchar
+  "promotion_id" integer
+  "value" string
+  "created_at" datetime
+  "updated_at" datetime
+  "promotion_code_batch_id" integer
+}
+
+Table "spree_promotion_rule_taxons" {
+  "id" varchar
+  "taxon_id" integer
+  "promotion_rule_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_promotion_rules" {
+  "id" varchar
+  "promotion_id" integer
+  "type" string
+  "created_at" datetime
+  "updated_at" datetime
+  "preferences" text
+}
+
+Table "spree_promotion_rules_stores" {
+  "id" varchar
+  "store_id" integer
+  "promotion_rule_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_promotion_rules_users" {
+  "id" varchar
+  "user_id" integer
+  "promotion_rule_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_promotions" {
+  "id" varchar
+  "description" string
+  "expires_at" datetime
+  "starts_at" datetime
+  "name" string
+  "type" string
+  "usage_limit" integer
+  "advertise" boolean
+  "path" string
+  "created_at" datetime
+  "updated_at" datetime
+  "promotion_category_id" integer
+  "per_code_usage_limit" integer
+  "apply_automatically" boolean
+}
+
+Table "spree_properties" {
+  "id" varchar
+  "name" string
+  "presentation" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_property_prototypes" {
+  "id" varchar
+  "prototype_id" integer
+  "property_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_prototype_taxons" {
+  "id" varchar
+  "taxon_id" integer
+  "prototype_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_prototypes" {
+  "id" varchar
+  "name" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_refund_reasons" {
+  "id" varchar
+  "name" string
+  "active" boolean
+  "mutable" boolean
+  "created_at" datetime
+  "updated_at" datetime
+  "code" string
+}
+
+Table "spree_refunds" {
+  "id" varchar
+  "payment_id" integer
+  "amount" decimal
+  "transaction_id" string
+  "created_at" datetime
+  "updated_at" datetime
+  "refund_reason_id" integer
+  "reimbursement_id" integer
+}
+
+Table "spree_reimbursement_credits" {
+  "id" varchar
+  "amount" decimal
+  "reimbursement_id" integer
+  "creditable_id" integer
+  "creditable_type" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_reimbursement_types" {
+  "id" varchar
+  "name" string
+  "active" boolean
+  "mutable" boolean
+  "created_at" datetime
+  "updated_at" datetime
+  "type" string
+}
+
+Table "spree_reimbursements" {
+  "id" varchar
+  "number" string
+  "reimbursement_status" string
+  "customer_return_id" integer
+  "order_id" integer
+  "total" decimal
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_return_authorizations" {
+  "id" varchar
+  "number" string
+  "state" string
+  "order_id" integer
+  "memo" text
+  "created_at" datetime
+  "updated_at" datetime
+  "stock_location_id" integer
+  "return_reason_id" integer
+}
+
+Table "spree_return_items" {
+  "id" varchar
+  "return_authorization_id" integer
+  "inventory_unit_id" integer
+  "exchange_variant_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+  "amount" decimal
+  "included_tax_total" decimal
+  "additional_tax_total" decimal
+  "reception_status" string
+  "acceptance_status" string
+  "customer_return_id" integer
+  "reimbursement_id" integer
+  "exchange_inventory_unit_id" integer
+  "acceptance_status_errors" text
+  "preferred_reimbursement_type_id" integer
+  "override_reimbursement_type_id" integer
+  "resellable" boolean
+  "return_reason_id" integer
+}
+
+Table "spree_return_reasons" {
+  "id" varchar
+  "name" string
+  "active" boolean
+  "mutable" boolean
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_roles" {
+  "id" varchar
+  "name" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_roles_users" {
+  "id" varchar
+  "role_id" integer
+  "user_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_shipments" {
+  "id" varchar
+  "tracking" string
+  "number" string
+  "cost" decimal
+  "shipped_at" datetime
+  "order_id" integer
+  "state" string
+  "created_at" datetime
+  "updated_at" datetime
+  "stock_location_id" integer
+  "adjustment_total" decimal
+  "additional_tax_total" decimal
+  "promo_total" decimal
+  "included_tax_total" decimal
+}
+
+Table "spree_shipping_categories" {
+  "id" varchar
+  "name" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_shipping_method_categories" {
+  "id" varchar
+  "shipping_method_id" integer
+  "shipping_category_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_shipping_method_stock_locations" {
+  "id" varchar
+  "shipping_method_id" integer
+  "stock_location_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_shipping_method_zones" {
+  "id" varchar
+  "shipping_method_id" integer
+  "zone_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_shipping_methods" {
+  "id" varchar
+  "name" string
+  "deleted_at" datetime
+  "created_at" datetime
+  "updated_at" datetime
+  "tracking_url" string
+  "admin_name" string
+  "tax_category_id" integer
+  "code" string
+  "available_to_all" boolean
+  "carrier" string
+  "service_level" string
+  "available_to_users" boolean
+}
+
+Table "spree_shipping_rate_taxes" {
+  "id" varchar
+  "amount" decimal
+  "tax_rate_id" integer
+  "shipping_rate_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_shipping_rates" {
+  "id" varchar
+  "shipment_id" integer
+  "shipping_method_id" integer
+  "selected" boolean
+  "cost" decimal
+  "created_at" datetime
+  "updated_at" datetime
+  "tax_rate_id" integer
+}
+
+Table "spree_state_changes" {
+  "id" varchar
+  "name" string
+  "previous_state" string
+  "stateful_id" integer
+  "user_id" integer
+  "stateful_type" string
+  "next_state" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_states" {
+  "id" varchar
+  "name" string
+  "abbr" string
+  "country_id" integer
+  "updated_at" datetime
+  "created_at" datetime
+}
+
+Table "spree_stock_items" {
+  "id" varchar
+  "stock_location_id" integer
+  "variant_id" integer
+  "count_on_hand" integer
+  "created_at" datetime
+  "updated_at" datetime
+  "backorderable" boolean
+  "deleted_at" datetime
+}
+
+Table "spree_stock_locations" {
+  "id" varchar
+  "name" string
+  "created_at" datetime
+  "updated_at" datetime
+  "default" boolean
+  "address1" string
+  "address2" string
+  "city" string
+  "state_id" integer
+  "state_name" string
+  "country_id" integer
+  "zipcode" string
+  "phone" string
+  "active" boolean
+  "backorderable_default" boolean
+  "propagate_all_variants" boolean
+  "admin_name" string
+  "position" integer
+  "restock_inventory" boolean
+  "fulfillable" boolean
+  "code" string
+  "check_stock_on_transfer" boolean
+}
+
+Table "spree_stock_movements" {
+  "id" varchar
+  "stock_item_id" integer
+  "quantity" integer
+  "action" string
+  "created_at" datetime
+  "updated_at" datetime
+  "originator_type" string
+  "originator_id" integer
+}
+
+Table "spree_store_credit_categories" {
+  "id" varchar
+  "name" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_store_credit_events" {
+  "id" varchar
+  "store_credit_id" integer
+  "action" string
+  "amount" decimal
+  "user_total_amount" decimal
+  "authorization_code" string
+  "deleted_at" datetime
+  "originator_type" string
+  "originator_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+  "amount_remaining" decimal
+  "store_credit_reason_id" integer
+}
+
+Table "spree_store_credit_reasons" {
+  "id" varchar
+  "name" string
+  "active" boolean
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_store_credit_types" {
+  "id" varchar
+  "name" string
+  "priority" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_store_credits" {
+  "id" varchar
+  "user_id" integer
+  "category_id" integer
+  "created_by_id" integer
+  "amount" decimal
+  "amount_used" decimal
+  "amount_authorized" decimal
+  "currency" string
+  "memo" text
+  "deleted_at" datetime
+  "created_at" datetime
+  "updated_at" datetime
+  "type_id" integer
+  "invalidated_at" datetime
+}
+
+Table "spree_store_payment_methods" {
+  "id" varchar
+  "store_id" integer
+  "payment_method_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_store_shipping_methods" {
+  "id" varchar
+  "store_id" integer
+  "shipping_method_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_stores" {
+  "id" varchar
+  "name" string
+  "url" string
+  "meta_description" text
+  "meta_keywords" text
+  "seo_title" string
+  "mail_from_address" string
+  "default_currency" string
+  "code" string
+  "default" boolean
+  "created_at" datetime
+  "updated_at" datetime
+  "cart_tax_country_iso" string
+  "available_locales" string
+  "bcc_email" string
+}
+
+Table "spree_tax_categories" {
+  "id" varchar
+  "name" string
+  "description" string
+  "is_default" boolean
+  "deleted_at" datetime
+  "created_at" datetime
+  "updated_at" datetime
+  "tax_code" string
+}
+
+Table "spree_tax_rate_tax_categories" {
+  "id" varchar
+  "tax_category_id" integer
+  "tax_rate_id" integer
+}
+
+Table "spree_tax_rates" {
+  "id" varchar
+  "amount" decimal
+  "zone_id" integer
+  "included_in_price" boolean
+  "created_at" datetime
+  "updated_at" datetime
+  "name" string
+  "show_rate_in_label" boolean
+  "deleted_at" datetime
+  "starts_at" datetime
+  "expires_at" datetime
+  "level" integer
+}
+
+Table "spree_taxonomies" {
+  "id" varchar
+  "name" string
+  "created_at" datetime
+  "updated_at" datetime
+  "position" integer
+}
+
+Table "spree_taxons" {
+  "id" varchar
+  "parent_id" integer
+  "name" string
+  "permalink" string
+  "taxonomy_id" integer
+  "lft" integer
+  "rgt" integer
+  "icon_file_name" string
+  "icon_content_type" string
+  "icon_file_size" integer
+  "icon_updated_at" datetime
+  "description" text
+  "created_at" datetime
+  "updated_at" datetime
+  "meta_title" string
+  "meta_description" string
+  "meta_keywords" string
+  "depth" integer
+}
+
+Table "spree_unit_cancels" {
+  "id" varchar
+  "inventory_unit_id" integer
+  "reason" string
+  "created_by" string
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_user_addresses" {
+  "id" varchar
+  "user_id" integer
+  "address_id" integer
+  "default" boolean
+  "archived" boolean
+  "created_at" datetime
+  "updated_at" datetime
+  "default_billing" boolean
+}
+
+Table "spree_user_stock_locations" {
+  "id" varchar
+  "user_id" integer
+  "stock_location_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_users" {
+  "id" varchar
+  "encrypted_password" string
+  "password_salt" string
+  "email" string
+  "remember_token" string
+  "persistence_token" string
+  "reset_password_token" string
+  "perishable_token" string
+  "sign_in_count" integer
+  "failed_attempts" integer
+  "last_request_at" datetime
+  "current_sign_in_at" datetime
+  "last_sign_in_at" datetime
+  "current_sign_in_ip" string
+  "last_sign_in_ip" string
+  "login" string
+  "ship_address_id" integer
+  "bill_address_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+  "spree_api_key" string
+  "authentication_token" string
+  "unlock_token" string
+  "locked_at" datetime
+  "remember_created_at" datetime
+  "reset_password_sent_at" datetime
+  "deleted_at" datetime
+  "confirmation_token" string
+  "confirmed_at" datetime
+  "confirmation_sent_at" datetime
+  "unconfirmed_email" string
+}
+
+Table "spree_variant_property_rule_conditions" {
+  "id" varchar
+  "option_value_id" integer
+  "variant_property_rule_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_variant_property_rule_values" {
+  "id" varchar
+  "value" text
+  "position" integer
+  "property_id" integer
+  "variant_property_rule_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_variant_property_rules" {
+  "id" varchar
+  "product_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+  "apply_to_all" boolean
+}
+
+Table "spree_variants" {
+  "id" varchar
+  "sku" string
+  "weight" decimal
+  "height" decimal
+  "width" decimal
+  "depth" decimal
+  "deleted_at" datetime
+  "is_master" boolean
+  "product_id" integer
+  "cost_price" decimal
+  "position" integer
+  "cost_currency" string
+  "track_inventory" boolean
+  "tax_category_id" integer
+  "updated_at" datetime
+  "created_at" datetime
+  "shipping_category_id" integer
+}
+
+Table "spree_wallet_payment_sources" {
+  "id" varchar
+  "user_id" integer
+  "payment_source_type" string
+  "payment_source_id" integer
+  "default" boolean
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_zone_members" {
+  "id" varchar
+  "zoneable_type" string
+  "zoneable_id" integer
+  "zone_id" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Table "spree_zones" {
+  "id" varchar
+  "name" string
+  "description" string
+  "zone_members_count" integer
+  "created_at" datetime
+  "updated_at" datetime
+}
+
+Ref "fk_rails_active_storage_attachments_active_storage_blobs":"active_storage_attachments"."blob_id" - "active_storage_blobs"."id"
+
+Ref "fk_rails_active_storage_variant_records_active_storage_blobs":"active_storage_variant_records"."blob_id" - "active_storage_blobs"."id"
+
+Ref "fk_rails_solidus_stripe_customers_spree_payment_methods":"solidus_stripe_customers"."payment_method_id" - "spree_payment_methods"."id"
+
+Ref "fk_rails_solidus_stripe_payment_intents_spree_orders":"solidus_stripe_payment_intents"."order_id" - "spree_orders"."id"
+
+Ref "fk_rails_solidus_stripe_payment_intents_spree_payment_methods":"solidus_stripe_payment_intents"."payment_method_id" - "spree_payment_methods"."id"
+
+Ref "fk_rails_solidus_stripe_slug_entries_spree_payment_methods":"solidus_stripe_slug_entries"."payment_method_id" - "spree_payment_methods"."id"
+
+Ref "fk_rails_spree_orders_promotions_spree_orders":"spree_orders_promotions"."order_id" - "spree_orders"."id" [delete: cascade]
+
+Ref "fk_rails_spree_orders_promotions_spree_promotions":"spree_orders_promotions"."promotion_id" - "spree_promotions"."id" [delete: cascade]
+
+Ref "fk_rails_spree_promotion_code_batches_spree_promotions":"spree_promotion_code_batches"."promotion_id" - "spree_promotions"."id"
+
+Ref "fk_rails_spree_promotion_codes_spree_promotion_code_batches":"spree_promotion_codes"."promotion_code_batch_id" - "spree_promotion_code_batches"."id"
+
+Ref "fk_rails_spree_tax_rate_tax_categories_spree_tax_categories":"spree_tax_rate_tax_categories"."tax_category_id" - "spree_tax_categories"."id"
+
+Ref "fk_rails_spree_tax_rate_tax_categories_spree_tax_rates":"spree_tax_rate_tax_categories"."tax_rate_id" - "spree_tax_rates"."id"
+
+Ref "fk_rails_spree_wallet_payment_sources_spree_users":"spree_wallet_payment_sources"."user_id" - "spree_users"."id"
